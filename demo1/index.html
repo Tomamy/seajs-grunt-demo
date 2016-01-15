@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <h2>下面内容是seajs写入的:</h2>
+    <div id="container"></div> 
+    <script src="../bower_components/seajs/dist/sea.js" id="seajs-script"></script>
+    <script>
+        seajs.config({
+            base: '../bower_components',
+            alias: {
+                'jquery': 'jquery/dist/jquery.js' 
+            }
+        });
+        seajs.use('./src/main.js');
+    </script>
+</body>
+</html>
