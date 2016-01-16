@@ -9,13 +9,20 @@
     <div id="container"></div> 
     <script src="../lib/seajs/dist/sea.js" id="seajs-script"></script>
     <script>
+		//config 的配置使用于调试环境
         seajs.config({
-            base: '../lib',
-            alias: {
-                'jquery': 'jquery/dist/jquery.js' 
-            }
+			base: '../lib',
+			alias:	{
+				"jquery": "jquery/dist/jquery.js"	
+			}
         });
-        seajs.use('./src/main.js');
+		//当true时，进入调试模式，否则进入生产模式
+		if(location.href.indexOf('dev=1') != -1){
+					
+			seajs.use('./src/main');
+		}else {
+			seajs.use('./dist/page.min.js');
+		}
     </script>
 </body>
 </html>
