@@ -60,6 +60,13 @@ module.exports = function(grunt){
 					'demo3/dist/page.min.js': ['demo3/dist/page.js']	
 				}	
 			}	
+		},
+
+		/**
+			删除临时文件.build
+		**/
+		clean: {
+		   build: ['demo3/.build']
 		}
 	});
 	grunt.loadNpmTasks('grunt-cmd-transport');
@@ -67,5 +74,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.registerTask('build',['copy','transport','concat','uglify']);
+	grunt.registerTask('build',['copy','transport','concat','uglify','clean']);
 }
